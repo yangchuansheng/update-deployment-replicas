@@ -93,7 +93,7 @@ NAME            SCHEDULE      SUSPEND   ACTIVE    LAST-SCHEDULE
 scale-nginx     0 10 * * *    False     0         <none>
 ```
 
-#### **场景二：**每天下午 2:00 将 Deployment `nginx` 的示例数缩容到 1 个：
+#### **场景二：** 每天下午 2:00 将 Deployment `nginx` 的示例数缩容到 1 个：
 
 创建一个 CronJob：
 
