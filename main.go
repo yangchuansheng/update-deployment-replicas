@@ -58,7 +58,7 @@ func main() {
 		panic(err)
 	}
 
-	deploymentsClient := clientset.AppsV1().Deployments(ns)
+	deploymentsClient := clientset.AppsV1beta1().Deployments(ns)
 
 	retryErr := retry.RetryOnConflict(retry.DefaultRetry, func() error {
 
