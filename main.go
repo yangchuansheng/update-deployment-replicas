@@ -17,6 +17,7 @@ limitations under the License.
 package main
 
 import (
+        "os"
 	"flag"
 	"fmt"
 	//apiv1 "k8s.io/api/core/v1"
@@ -25,7 +26,6 @@ import (
 	"k8s.io/client-go/util/retry"
 	// Uncomment the following line to load the gcp plugin (only required to authenticate against GKE clusters).
 	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
-	"os"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/client-go/rest"
 )
@@ -38,11 +38,6 @@ func main() {
 	imageName := flag.String("image", "", "new image name")
 	replicasNum := flag.Int("replicas",  0, "number of replicas")
 	flag.Parse()
-
-	if ns == "" {
-		fmt.Println("You must specify the namespace name.")
-		os.Exit(0)
-	}
 
 	if *deploymentName == "" {
 		fmt.Println("You must specify the deployment name.")
